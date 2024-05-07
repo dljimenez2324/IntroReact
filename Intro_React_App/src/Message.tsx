@@ -3,7 +3,7 @@
 function Message()
 {
     //JSX: Javascript & XML combination
-    return <h1>Hello World</h1>
+    return <h1>Hello David from my message component!</h1>
 }
 
 // in order to use this, we need to export this function
