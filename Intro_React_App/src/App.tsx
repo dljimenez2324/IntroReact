@@ -1,4 +1,5 @@
 //import Message from "./Message";
+import Counter from "./components/Counter";
 import ListGroup from "./components/ListGroup";
 import MyuseStateExample from "./components/MyuseStateExample";
 
@@ -15,6 +16,9 @@ function App() {
       </div>
       <div>
         <MyuseStateExample />
+      </div>
+      <div>
+        <Counter />
       </div>
       {/* //return <div><h1>Hello World</h1></div> */}
     </>
