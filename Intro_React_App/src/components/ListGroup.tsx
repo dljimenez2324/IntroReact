@@ -1,8 +1,20 @@
 import { useState } from "react";
 
+// to make this reusable we will be using properties
+// TypeScript has a feature called interface
+// using an interface , we can define the shape of our objects
+// {items: [], heading :string}
+// then in your component function you have to add this to the argument
+// {key, key, ...}:Name of interface}
 
-const ListGroup = () => {
-  let items = ["New York", "San Francisco", "Tokyo", "London", "Paris"];
+interface ListProps {
+  items: string []
+  heading: string
+}
+
+
+const ListGroup = ({items,heading}:ListProps) => {
+  
   //let selectedIndex = 0;
 
   // event handler which is a function to handle an event inside of the line with {items.map((item, index) => ( stufffffff
@@ -58,7 +70,7 @@ const ListGroup = () => {
     // similarly we can use these instead of fragment  <></>
     // if we want to target something for our css we can add a <div className = "some-class-name"></div> and wrap this around our list group or whateve we have
     <>
-      <h1>List</h1>
+      <h1>{heading}</h1>
       {getMessage()}
       {/* this will function the same way as above in line 7 to 16 */}
       {/* {items.length == 0 ? <p>No Items Found</p> : null} */}
