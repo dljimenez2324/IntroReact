@@ -7,13 +7,21 @@ import { useState } from "react";
 // then in your component function you have to add this to the argument
 // {key, key, ...}:Name of interface}
 
+// interface ListProps {
+//   items: string []
+//   heading: string
+// }
+
+
+// notice that we have a function now
 interface ListProps {
   items: string []
   heading: string
+  onSelectedItem:(item:string) => void
 }
 
 
-const ListGroup = ({items,heading}:ListProps) => {
+const ListGroup = ({items,heading,onSelectedItem}:ListProps) => {
   
   //let selectedIndex = 0;
 
@@ -101,7 +109,10 @@ const ListGroup = ({items,heading}:ListProps) => {
             key={index}
             // onClick={() => console.log(`${item}`)}
             // for the useState now use this
-            onClick={() => setSelectedIndex(index)}
+            // in order to have more than one function we need to put our {}
+            onClick={() => {setSelectedIndex(index)
+              onSelectedItem(item);
+            }}
             // the below will be used with our updateIndex from up above
             //onClick={() => updateIndex(index)}
           >

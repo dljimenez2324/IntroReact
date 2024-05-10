@@ -1,7 +1,9 @@
 //import Message from "./Message";
+import Alert from "./components/Alert";
 import Counter from "./components/Counter";
 import ListGroup from "./components/ListGroup";
 import MyuseStateExample from "./components/MyuseStateExample";
+
 
 function App() {
   // this is from our list group that we cut out and put here instead
@@ -38,7 +40,11 @@ function App() {
     "Chevrolet",
     "Mazda",
   ];
-  
+
+  const handleSelectItem = (item:string) => {
+    console.log(item);
+  }
+
   //return <div>Hello {name}!</div>
   //return <div><Message/></div>
   {
@@ -47,10 +53,14 @@ function App() {
   return (
     <>
       <div>
-        <ListGroup items={items} heading="Cities" />
+        {/* <Alert text="This text is coming from my Alert"/> */}
+        <Alert>
+          Passing in text as a child instead of from a property!
+        </Alert>
+        <ListGroup onSelectedItem={handleSelectItem} items={items} heading="Cities" />
         {/* if we want to make a second list we can use props or properties */}
-        <ListGroup items={students} heading="Students" />
-        <ListGroup items={cars} heading="Cars" />
+        <ListGroup onSelectedItem={handleSelectItem} items={students} heading="Students" />
+        <ListGroup onSelectedItem={handleSelectItem} items={cars} heading="List of Cars" />
       </div>
       <div>
         <MyuseStateExample />
