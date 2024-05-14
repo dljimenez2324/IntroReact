@@ -1,5 +1,7 @@
 //import Message from "./Message";
+import { useState } from "react";
 import Alert from "./components/Alert";
+import Button from "./components/Button";
 import Counter from "./components/Counter";
 import ListGroup from "./components/ListGroup";
 import MyuseStateExample from "./components/MyuseStateExample";
@@ -45,18 +47,29 @@ function App() {
     console.log(item);
   }
 
-  //return <div>Hello {name}!</div>
-  //return <div><Message/></div>
-  {
-    /* make sure our function called is self closing tag and it doesn't need () */
+  // typically to handle the button with an input for it we would do this instead unlike our first button which is okay but not common practice
+  const handleClick = () => {
+    console.log("Clicked from our helper function");
   }
+
+  // to use the setDisplay use state for the button and alert the usestate should live where its being used
+  const[display, setDisplay] = useState(false);
+
+  // this will toggle our alert buttons
+  const setDisFunc = () => {
+    setDisplay(!display);
+  }
+
   return (
     <>
       <div>
-        {/* <Alert text="This text is coming from my Alert"/> */}
-        <Alert>
-          Passing in text as a child instead of from a property!
-        </Alert>
+       
+        {display ? <Alert closeAlertFunc={setDisFunc}>Click Me For Latest Alerts</Alert> : null}
+        <Button color="warning" onClickFunction={setDisFunc}>Click for New Alerts</Button>
+        <Button color="primary" onClickFunction={handleClick}>One Button</Button>
+        <Button color="secondary" onClickFunction={handleClick}>Two Button</Button>
+        <Button color="success" onClickFunction={handleClick}>Tres Button</Button>
+
         <ListGroup onSelectedItem={handleSelectItem} items={items} heading="Cities" />
         {/* if we want to make a second list we can use props or properties */}
         <ListGroup onSelectedItem={handleSelectItem} items={students} heading="Students" />
