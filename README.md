@@ -27,7 +27,7 @@ Remember which type turns something on and off.
 Look at the bootstrap Alert docs
 
 <b>Resources:</b> <br>
-<b>GitHub:</b> https://github.com/dljimenez2324/IntroReact <br>
+<b>GitHub:</b>  <br>
 
 
 Peer Reviewed by: Name here <br>
