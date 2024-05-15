@@ -1,4 +1,5 @@
 import { useState } from "react";
+import styles from './ListGroup.module.css'
 
 // to make this reusable we will be using properties
 // TypeScript has a feature called interface
@@ -82,7 +83,7 @@ const ListGroup = ({items,heading,onSelectedItem}:ListProps) => {
       {getMessage()}
       {/* this will function the same way as above in line 7 to 16 */}
       {/* {items.length == 0 ? <p>No Items Found</p> : null} */}
-      <ul className="list-group">
+      <ul className={[styles.ListGroup, styles.container].join(' ')}>
         {/* This was step 2 <li className="list-group-item">An item</li>
         <li className="list-group-item">A second item</li>
         <li className="list-group-item">A third item</li>
@@ -103,8 +104,8 @@ const ListGroup = ({items,heading,onSelectedItem}:ListProps) => {
             // onClick={handleClick}
             className={
               selectedIndex == index
-                ? "list-group-item active"
-                : "list-group-item"
+                ? styles['listGroupItem active']
+                : styles['listGroupItem']
             }
             key={index}
             // onClick={() => console.log(`${item}`)}

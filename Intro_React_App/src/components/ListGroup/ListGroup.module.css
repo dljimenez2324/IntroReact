@@ -1,0 +1,15 @@
+.listGroup {
+    list-style: none;
+    padding:0;
+    margin:25px;
+}
+.listGroupItem {
+    padding: 8px 10px;
+    border-bottom: 2px solid lightgray ; 
+}
+.listGroupItem:hover {
+    background-color: cornflowerblue;
+}
+.container {
+    background: yellow;
+}
