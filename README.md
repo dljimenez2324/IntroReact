@@ -30,6 +30,6 @@ Look at the bootstrap Alert docs
 <b>GitHub:</b>  <br>
 
 
-Peer Reviewed by: Name here <br>
-Comments: <br> 
-Put your comments here <br> 
+Peer Reviewed by: Jerie See Villanueva <br>
+Comments: The alert featured button worked  <br> 
+Put your comments here <br> Everything works good. Like how the button toggles as well. 
