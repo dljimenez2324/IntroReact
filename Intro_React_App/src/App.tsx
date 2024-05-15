@@ -64,8 +64,8 @@ function App() {
   return (
     <>
 
-      <BsCalendarDateFill color="red" size={60} />
       <div>
+      <BsCalendarDateFill color="red" size={60} />
         {display ? <Alert closeAlertFunc={setDisFunc}>Click Me For Latest Alerts</Alert> : null}
         <Button color="warning" onClickFunction={setDisFunc}>Click for New Alerts</Button>
         <Button color="primary" onClickFunction={handleClick}>One Button</Button>
