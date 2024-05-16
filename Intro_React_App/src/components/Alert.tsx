@@ -1,8 +1,8 @@
 
 
 interface AlertProps {
-    children:string
-    closeAlertFunc: () => void
+    children?:string
+    closeAlertFunc?: () => void
 }
 
 const Alert = ({children, closeAlertFunc}:AlertProps) => {
