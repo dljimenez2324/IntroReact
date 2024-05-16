@@ -19,7 +19,7 @@ The Button.module.css should be in its own Button Folder and move your Button.ts
 
 <b>Resources:</b>https://react-icons.github.io/react-icons/<br>
 https://getbootstrap.com/docs/5.1/utilities/colors/ <br>
-<b>GitHub:</b>  <br>
+<b>GitHub:</b> https://github.com/dljimenez2324/IntroReact <br>
 
 
 Peer Reviewed by: name <br>
