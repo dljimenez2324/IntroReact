@@ -23,7 +23,7 @@ https://getbootstrap.com/docs/5.1/utilities/colors/ <br>
 
 
 Peer Reviewed by: Aaron Perez <br>
-Comments: <br>
+Comments: Both buttons work and meet the requirements. The like button works to fill the icon and the other button is styled like the bootstrap primary button. Great work!!!!! <br>
 place comments here
 
 
