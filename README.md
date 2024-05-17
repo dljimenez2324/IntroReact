@@ -22,7 +22,7 @@ https://getbootstrap.com/docs/5.1/utilities/colors/ <br>
 <b>GitHub:</b> https://github.com/dljimenez2324/IntroReact <br>
 
 
-Peer Reviewed by: name <br>
+Peer Reviewed by: Aaron Perez <br>
 Comments: <br>
 place comments here
 
