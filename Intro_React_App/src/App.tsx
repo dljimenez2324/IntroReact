@@ -1,4 +1,4 @@
-//import Message from "./Message";
+
 import { useState } from "react";
 import Alert from "./components/Alert";
 import Button from "./components/Button/Button";
@@ -8,6 +8,7 @@ import MyuseStateExample from "./components/MyuseStateExample";
 import { BsCalendarDateFill } from "react-icons/bs";
 import Counter2 from "./components/Counter2/Counter2";
 import Like from "./components/Like";
+import Message from "./Message";
 
 
 function App() {
@@ -65,30 +66,70 @@ function App() {
   // to use the setDisplay use state for the button and alert the usestate should live where its being used
   const[display, setDisplay] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
+  
+  // this will toggle our alert buttons
+  const setDisFunc = () => {
+    setDisplay(!display);
+  }
+  
+  const [alertVisible, setAlertVisible] = useState(false)
+  
+  const alertVisClick = () => {
+    setAlertVisible(!alertVisible)
+  }
+
   // const [firstName, setFirstName] = useState("David");
   // const [lastName, setLastName] = useState("Jimenez");
 
   // const fullName = firstName + " " + lastName;
 
-  // INSTEAD OF USING TWO USE STATES WE CAN DO AN OBJECT
+  // INSTEAD OF USING TWO USE STATES WE CAN DO AN OBJECT  located below the 4th button
   const [person, setPerson] = useState({
     firstName: 'David',
     lastName: 'Jimenez'
   })
 
-  // this will toggle our alert buttons
-  const setDisFunc = () => {
-    setDisplay(!display);
+  // learn how to update an object in our useState
+  const [drink, setDrink] = useState({
+    title:"Americano",
+    price:8
+  })
+
+  // now lets create a function to update the price of our drink object in our useState
+  const handleDrink = () => {
+    // we first need to update the entire object
+    const newDrink = {
+      title:drink.title,
+      price: 10
+    }
+    // now we update the object with setDrink
+    setDrink(newDrink);
+    console.log(drink);
+    console.log("The drink price is $" + drink.price)
   }
 
-  const [alertVisible, setAlertVisible] = useState(false)
+  // now lets try updating a nested object but first lets create one first
+  const [customer, setCustomer] = useState({
+    name: "Jose",
+    address: {
+      city: "Stockton",
+      zipCode: 94402
+    }
+  })
 
-  const alertVisClick = () => {
-    setAlertVisible(!alertVisible)
+  // now lets create a function to handle this update of the zipcode that is incorrect  (updating a nested object)
+  const handleCustomer = () => {
+    // we will need to make a copy of the entire object, then  put ,  then put the key the part will be in  then make the value be the ...customer.address    with a comma to target the exact key and value that will be updated
+    setCustomer({...customer,address:{...customer.address,zipCode:95212}})
   }
+
   return (
     <>
-
+      <div>
+        {/* <Message/>
+        <Message/>
+        <Message/> */}
+      </div>
       <div>
         <Like/>
       </div>
@@ -105,10 +146,18 @@ function App() {
 
         {/* This button below is of MC 6 */}
         <Button color="primary" onClickFunction={handleClick}>One Button</Button>
+        {/* this below is older content */}
         <Button color="secondary" onClickFunction={handleClick}>Visible Button</Button>
         <Button color="success" onClickFunction={alertVisClick}>AlertVisible Button</Button>
         <Button color="success" onClickFunction={alertVisClick}>4th Button</Button>
+        {/* this below shows how to use objects */}
         {person.firstName} {person.lastName}
+
+        {/* drink update button */}
+        <Button color="success" onClickFunction={handleDrink}>Drink Update Btn</Button>
+        {/* customer update button */}
+        <Button color="success" onClickFunction={handleCustomer}>Customer Update Btn</Button><span>{customer.address.zipCode}</span>
+
 
         <Counter2/>
 
