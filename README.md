@@ -17,8 +17,9 @@ The component should be an icon.
 The Button.module.css should be in its own Button Folder and move your Button.tsx into that folder.
 
 
-<b>Resources:</b>https://react-icons.github.io/react-icons/<br>
+<b>Resources:</b> https://react-icons.github.io/react-icons/<br>
 https://getbootstrap.com/docs/5.1/utilities/colors/ <br>
+
 <b>GitHub:</b> https://github.com/dljimenez2324/IntroReact <br>
 
 
